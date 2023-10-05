@@ -15,6 +15,7 @@ int main(){
         player = (player % 2) ? 1 : 2;
         printf("Player %d, enter the choice : ",player);
         scanf("%d", &choice);
+        mark = (player == 1) ? 'X' : 'O';
 
         if(choice == 1 && sqaure[1] == "1")
             sqaure[1] = mark;
@@ -40,9 +41,17 @@ int main(){
             player--;
             getch();
         }
-
-
-
+        i = checkWin();
+        player++;
 
     }while(i == -1);
+
+    if (i==1){
+        printf("==> Player %d won", --player);
+    }
+    else{
+        printf("==> Game draw");
+    }
+        getch();
+        return 0;
 }
