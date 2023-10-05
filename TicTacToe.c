@@ -3,7 +3,7 @@
 #include <windows.h>
 #include <stdlib.h>
 
-char sqaure[10] = {"0", "1,", "2", "3", "4", "5", "6", "7", "8", "9"};
+char sqaure[10] = {'o', "1,", "2", "3", "4", "5", "6", "7", "8", "9"};
 int checkWin();
 void drawBoard();
 
@@ -80,4 +80,19 @@ int checkWin(){
     else if (sqaure[1] != "1" && sqaure[2] != "2" && sqaure[3] != "3" && sqaure[4] != "4" && sqaure[5] != "5" && sqaure[6] != "6" && sqaure[7] != "7" && sqaure[8] != "8" && sqaure[9]!= "9") 
         return 0;
     else return -1;
+}
+
+void drawBoard(){
+    system("cls");
+    printf("\n\n\t Tic Tac Toe \n\n");
+    printf("Player1 (X) - Player2 (O) \n\n\n");
+    printf("     |     |     \n");
+    printf("  %c  |  %c  |  %c  \n", sqaure[1], sqaure[2], sqaure[3]);
+    printf("_____|_____|_____\n");
+    printf("     |     |     \n");
+    printf("  %c  |  %c  |  %c  \n", sqaure[4], sqaure[5], sqaure[6]);
+    printf("_____|_____|_____\n");
+    printf("     |     |     \n");
+    printf("  %c  |  %c  |  %c  \n", sqaure[7], sqaure[8], sqaure[9]);
+    printf("     |     |     \n");
 }
