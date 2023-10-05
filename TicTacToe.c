@@ -46,6 +46,7 @@ int main(){
 
     }while(i == -1);
 
+    drawBoard();
     if (i==1){
         printf("==> Player %d won", --player);
     }
@@ -54,4 +55,29 @@ int main(){
     }
         getch();
         return 0;
+}
+int checkWin(){
+
+    if(sqaure[1] == sqaure[2] && sqaure[2] == sqaure[3]) //horizontal
+        return 1;
+    else if (sqaure[4] == sqaure[5] && sqaure[5] == sqaure[6])
+        return 1;
+    else if (sqaure[7] == sqaure[8] && sqaure[8] == sqaure[9])
+        return 1;
+
+    else if (sqaure[1] == sqaure[4] && sqaure[4] == sqaure[7]) //vertical
+        return 1;
+    else if (sqaure[2] == sqaure[5] && sqaure[5] == sqaure[8])
+        return 1;
+    else if (sqaure[3] == sqaure[6] && sqaure[6] == sqaure[9])
+        return 1;
+
+    else if (sqaure[1] == sqaure[5] && sqaure[5] == sqaure[9]) //diagonal
+        return 1;
+    else if (sqaure[3] == sqaure[5] && sqaure[5] == sqaure[7])
+        return 1;
+
+    else if (sqaure[1] != "1" && sqaure[2] != "2" && sqaure[3] != "3" && sqaure[4] != "4" && sqaure[5] != "5" && sqaure[6] != "6" && sqaure[7] != "7" && sqaure[8] != "8" && sqaure[9]!= "9") 
+        return 0;
+    else return -1;
 }
